@@ -1,7 +1,4 @@
-
 import React, { useState, useCallback } from 'react';
-
-
 import UrlInput from './components/UrlInput';
 import LoadingSpinner from './components/LoadingSpinner';
 import PostCard from './components/PostCard';
@@ -133,11 +130,7 @@ const Tool: React.FC<{
     const { url, setUrl, posts, isLoading, error, contentType, setContentType, viewMode, setViewMode, regeneratingDays, linkingDays, isDownloading, handleGeneratePlan, handleUpdatePost, handleGenerateVideo, handleRegenerateImage, handleSchedulePost, handleGeneratePermanentUrl, handleDownloadAllAsCSV } = props;
     return (
         <>
-            <Header />
-            <UrlInput url={url} setUrl={setUrl} onGenerate={handleGeneratePlan} isLoading={isLoading} />
-            <ContentTypeSelector selectedType={contentType} onTypeChange={setContentType} />
-            
-            {isLoading && <LoadingSpinner />}
+                        {isLoading && <LoadingSpinner />}
             {error && <p className="text-center text-red-400 bg-red-900/50 border border-red-700 p-3 rounded-lg max-w-2xl mx-auto">{error}</p>}
             
             {posts.length > 0 && !isLoading && (
@@ -371,10 +364,7 @@ const App: React.FC = () => {
                 return str;
             };
         
-            const headers = [
-                'Day', 'Message/Caption', 'Image URL (Shareable)', 'Video URL (Shareable)', 
-                'Music Suggestion', 'Scheduled At', 'Facebook URL', 'Instagram URL', 'YouTube URL'
-            ];
+                        ];
         
             const rows = postsWithGeneratedLinks.map(p => [
                 p.day,
@@ -388,8 +378,7 @@ const App: React.FC = () => {
                 `https://www.youtube.com/upload`
             ]);
         
-            let csvContent = headers.join(",") + "\n" 
-                           + rows.map(e => e.join(",")).join("\n");
+           
             
             const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement("a");
