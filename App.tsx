@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback } from 'react';
 
-import Header from './components/Header';
+
 import UrlInput from './components/UrlInput';
 import LoadingSpinner from './components/LoadingSpinner';
 import PostCard from './components/PostCard';
@@ -85,20 +85,7 @@ const FaqItem: React.FC<{ question: string; children: React.ReactNode }> = ({ qu
 
 const LandingPage: React.FC<{ onLaunch: () => void; onContact: () => void }> = ({ onLaunch, onContact }) => (
     <>
-        <header className="text-center py-20 px-4">
-            <h1 className="text-4xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-500 mb-4 tracking-tight">
-                Automate Your Social Media with a Single Click.
-            </h1>
-            <p className="text-gray-300 max-w-3xl mx-auto text-lg sm:text-xl">
-                Turn any website into a week's worth of engaging social media content. AI-powered posts, images, and video ideas generated in minutes.
-            </p>
-            <button 
-                onClick={onLaunch}
-                className="mt-8 px-8 py-4 bg-indigo-600 text-white font-bold text-lg rounded-full hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-105"
-            >
-                Get Started For Free
-            </button>
-        </header>
+       
 
         <BusinessDnaFeature />
         <PricingSection onLaunch={onLaunch} onContact={onContact} />
